@@ -4,97 +4,140 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Gabriel Filadelfo</title>
+  <meta name="theme-color" content="#000000" />
+  <title>Gabriel — Filadelfo</title>
   <link rel="icon" href="Imgs/Design sem nome.png" type="image/png" />
-  <link rel="stylesheet" href="Portifolio.css" />
+
+  <!-- Helvetica Neue ME (carrega sem bloquear a página: print → all) -->
+  <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
   <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    href="https://db.onlinewebfonts.com/c/95cecf452d3208890088a5b4c19c7ecf?family=Helvetica+Neue+ME"
+    media="print"
+    onload="this.media='all'"
   />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://db.onlinewebfonts.com/c/95cecf452d3208890088a5b4c19c7ecf?family=Helvetica+Neue+ME"
+    />
+  </noscript>
+
+  <link rel="preload" as="image" href="Imgs/portrait-bg.webp" />
+  <link rel="preload" as="image" href="Imgs/portrait-cutout.webp" />
+  <link rel="stylesheet" href="Portifolio.css" />
 </head>
 <body>
-  <div class="hero-header">
-    <div class="wrapper">
-      <header>
-        <div
-          class="logo"
-          style="cursor: pointer;"
-          onclick="location.reload()"
-          title="Recarregar página"
-        >
-          <i class="fa-solid fa-g"></i>
-          <div class="logo-text">Gabriel Filadelfo</div>
-        </div>
-        <nav>
-          <div class="togglebtn" aria-label="Menu" role="button" tabindex="0">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <ul class="navlinks">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">In the future</a></li>
-            <li><a href="#">In the future</a></li>
-            <li><a href="#">In the future</a></li>
-            <li><a href="#">In the future</a></li>
-          </ul>
-        </nav>
-      </header>
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="inicio" data-open="false">
+    <!-- Fundo: foto inteira -->
+    <img class="hero__photo anim-fade-in" src="Imgs/portrait-bg.webp" alt="" />
 
-      <div class="container">
-        <div class="hero-pic">
-          <img
-            src="Imgs/WhatsApp Image 2025-11-06 at 00.32.04.jpeg"
-            alt="Foto de perfil Gabriel Filadelfo"
-          />
-        </div>
-        <div class="hero-text">
-          <h5>
-            Hi, I'm
-            <span class="typed-effect"></span>
-          </h5>
-          <h1>Gabriel Filadelfo</h1>
-          <p>
-            Bem-vindo ao meu portfólio! Sou analista e desenvolvedor de software
-            e gosto de criar soluções digitais que transformam ideias em realidade.
-            Acredito que a tecnologia tem o poder de mudar o mundo, e estou
-            determinado a fazer parte dessa transformação.
-            Vamos juntos construir o futuro, um código por vez!
-          </p>
+    <!-- Escurece só o ambiente; o recorte por cima mantém a luz original -->
+    <div class="hero__scrim" aria-hidden="true"></div>
 
-          <div class="btn-group">
-            <a href="Doc/Curriculo.pdf" class="btn active" download
-              >Download CV</a
-            >
-            <a href="https://wa.me/5514997966931" class="btn" target="_blank"
-              >Contact</a
-            >
-          </div>
-
-          <div class="social">
-            <a
-              href="https://www.linkedin.com/in/gabriel-filadelfo-201bbb2b7/"
-              target="_blank"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/gabr1el_filadelfo?igsh=dmFyY3B3cGpqY2tv"
-              target="_blank"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-            <a href="https://discord.com/channels/@b1el0403" target="_blank"
-              ><i class="fa-brands fa-discord"></i
-            ></a>
-            <a
-              href="https://open.spotify.com/user/2nmcobent07h0elcz6x8rl3l4?si=ff7051c6e1c844e7"
-              target="_blank"
-              ><i class="fa-brands fa-spotify"></i
-            ></a>
-          </div>
-        </div>
+    <!-- Nome gigante em loop (duas metades iguais) -->
+    <div class="hero__marquee anim-fade-up" style="animation-delay: 500ms">
+      <div class="marquee">
+        <span>Gabriel &mdash; Filadelfo&nbsp;</span>
+        <span aria-hidden="true">Gabriel &mdash; Filadelfo&nbsp;</span>
       </div>
     </div>
-  </div>
+
+    <!-- Recorte: só a pessoa, por cima do nome -->
+    <img
+      class="hero__photo hero__cutout anim-rise-in"
+      style="animation-delay: 300ms"
+      src="Imgs/portrait-cutout.webp"
+      alt="Gabriel Filadelfo"
+    />
+
+    <!-- Linha creme -->
+    <div class="hero__rule anim-line" style="animation-delay: 1200ms" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="hero__header">
+      <a href="#" class="hero__brand anim-fade-up" style="animation-delay: 800ms">Gabriel</a>
+
+      <div class="hero__meta">
+        <span class="anim-fade-up" style="animation-delay: 900ms">2026</span>
+
+        <nav aria-label="Navegação">
+          <ul class="hero__list">
+            <li class="anim-fade-up" style="animation-delay: 1000ms"><a href="#skills">Skills</a></li>
+            <li class="anim-fade-up" style="animation-delay: 1080ms"><a href="Doc/Curriculo.pdf" download>Currículo</a></li>
+            <li class="anim-fade-up" style="animation-delay: 1160ms"><a href="https://wa.me/5514997966931" target="_blank" rel="noopener noreferrer">Contato</a></li>
+          </ul>
+        </nav>
+
+        <ul class="hero__list">
+          <li class="anim-fade-up" style="animation-delay: 1150ms"><a href="https://www.linkedin.com/in/gabriel-filadelfo-201bbb2b7/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li class="anim-fade-up" style="animation-delay: 1230ms"><a href="https://github.com/Hyogaherking" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li class="anim-fade-up" style="animation-delay: 1310ms"><a href="https://www.instagram.com/gabr1el_filadelfo?igsh=dmFyY3B3cGpqY2tv" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Rodapé da hero -->
+    <div class="hero__footer">
+      <div class="anim-fade-up" style="animation-delay: 1400ms">
+        <p>Desenvolvedor Júnior</p>
+        <p>APIs, web e banco de dados</p>
+        <p>Estudante de ADS — UnEduvale</p>
+      </div>
+      <div class="hero__footer-right anim-fade-up" style="animation-delay: 1550ms">
+        <p>Baseado em</p>
+        <p>Avaré, SP — Brasil</p>
+      </div>
+    </div>
+
+    <!-- Menu mobile -->
+    <div class="hero__drawer">
+      <div class="hero__backdrop" data-close aria-hidden="true"></div>
+
+      <aside class="hero__panel" id="menu-mobile" aria-label="Menu" inert>
+        <button type="button" class="hero__close" data-close aria-label="Fechar menu" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+
+        <p class="hero__label hero__label--nav">Navegação</p>
+        <ul class="hero__drawer-nav">
+          <li style="--i: 0"><a href="#skills" data-close>Skills</a></li>
+          <li style="--i: 1"><a href="Doc/Curriculo.pdf" download data-close>Currículo</a></li>
+          <li style="--i: 2"><a href="https://wa.me/5514997966931" target="_blank" rel="noopener noreferrer" data-close>Contato</a></li>
+        </ul>
+
+        <p class="hero__label hero__label--social">Me encontre</p>
+        <ul class="hero__drawer-social">
+          <li style="--i: 0"><a href="https://www.linkedin.com/in/gabriel-filadelfo-201bbb2b7/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li style="--i: 1"><a href="https://github.com/Hyogaherking" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li style="--i: 2"><a href="https://www.instagram.com/gabr1el_filadelfo?igsh=dmFyY3B3cGpqY2tv" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <!-- Hambúrguer → X (sempre por cima de tudo) -->
+    <div class="hero__burger-wrap anim-fade-up" style="animation-delay: 900ms">
+      <button
+        type="button"
+        class="hero__burger"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="menu-mobile"
+      >
+        <span class="hero__bars" aria-hidden="true">
+          <span class="hero__bar hero__bar--top"></span>
+          <span class="hero__bar hero__bar--mid"></span>
+          <span class="hero__bar hero__bar--bot"></span>
+        </span>
+      </button>
+    </div>
+  </section>
+
   <section id="skills" class="skills-section">
   <div class="wrapper">
     <h2>Minhas Skills</h2>
@@ -103,36 +146,46 @@
 </section>
   <footer class="footer">
     <div class="wrapper">
-      <p>&copy; 2025 Gabriel Filadelfo. Todos os direitos reservados.</p>
+      <p>&copy; 2026 Gabriel Filadelfo. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <!-- typed.js para o efeito de digitação -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
   <script>
-    // Botão do menu hamburguer
-    const togglebtn = document.querySelector(".togglebtn");
-    const nav = document.querySelector(".navlinks");
+    // Menu mobile da hero
+    (() => {
+      const hero = document.querySelector(".hero");
+      if (!hero) return;
 
-    togglebtn.addEventListener("click", () => {
-      togglebtn.classList.toggle("click");
-      nav.classList.toggle("open");
-    });
+      const toggle = hero.querySelector(".hero__burger");
+      const panel = hero.querySelector(".hero__panel");
+      let previousOverflow = "";
 
-    // Efeito de digitação
-    var typed = new Typed(".typed-effect", {
-      strings: [
-        "Frontend Developer",
-        "Digital Game Programmer",
-        "Systems Analyst and Developer",
-      ],
-      typeSpeed: 70,
-      backSpeed: 55,
-      loop: true,
-      backDelay: 1500,
-      showCursor: true,
-      cursorChar: "|",
-    });
+      const setOpen = (open) => {
+        if ((hero.dataset.open === "true") === open) return;
+        hero.dataset.open = String(open);
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+        panel.inert = !open;
+
+        if (open) {
+          previousOverflow = document.body.style.overflow;
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = previousOverflow;
+        }
+      };
+
+      toggle.addEventListener("click", () => setOpen(hero.dataset.open !== "true"));
+      hero.querySelectorAll("[data-close]").forEach((el) =>
+        el.addEventListener("click", () => setOpen(false))
+      );
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") setOpen(false);
+      });
+      window.matchMedia("(min-width: 640px)").addEventListener("change", (e) => {
+        if (e.matches) setOpen(false);
+      });
+    })();
   </script>
   <script>
   fetch('skills.json')
